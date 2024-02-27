@@ -1,0 +1,140 @@
+git clone https://github.com/vaaliferov/DAWG.git
+
+cd DAWG
+
+python3 -m venv env
+source env/bin/activate
+pip install tqdm lxml pandas jupyter
+
+pip install -e .
+
+python3 -m jupyter lab
+
+python3 -m ipykernel install --user --name dawg_env
+
+
+perfect hash
+delta encoding
+variable-length code
+golomb coding
+roaringbitmap !
+JamSpell (habr)  !
+CRoaring, PyRoaringBitMap !
+compression of sparse bitarrays
+whoosh full-text searching library
+
+Symmetric Delete Spelling Correction (SymSpell)
+
+https://opencorpora.org/files/export/dict/dict.opcorpora.xml.zip
+https://opencorpora.org/files/export/annot/annot.opcorpora.xml.zip
+
+https://stackoverflow.com/questions/30984078/cython-working-with-c-streams
+https://stackoverflow.com/questions/43658864/cython-convert-string-into-integers-and-floats
+https://gcc.gnu.org/onlinedocs/libstdc++/libstdc++-html-USERS-4.3/a00951.html#bbdb4571f84604746115f82074e8309a (openmode std::ios_base::binary)
+https://gcc.gnu.org/onlinedocs/libstdc++/libstdc++-html-USERS-4.3/a01901.html (openmode binary =  _S_bin)
+
+Исправляем опечатки с учётом контекста
+https://habr.com/ru/articles/346618/
+
+1000x Faster Spelling Correction algorithm (2012)
+https://wolfgarbe.medium.com/1000x-faster-spelling-correction-algorithm-2012-8701fcd87a5f
+
+Compressing dictionaries with a DAWG
+http://stevehanov.ca/blog/?id=115
+
+Fast and Easy Levenshtein distance
+http://stevehanov.ca/blog/?id=114
+
+https://github.com/cython/cython
+https://github.com/elastic/elasticsearch
+
+https://github.com/pytries/DAWG
+https://github.com/pytries/DAWG-Python
+https://github.com/pymorphy2-fork/DAWG.git
+
+https://code.google.com/archive/p/dawgdic
+https://github.com/brmson/dawg-levenshtein
+https://github.com/mattandahalfew/Levenshtein_search
+
+Fuzzy Matching (kmike -> DAWG-Python)
+https://github.com/pytries/marisa-trie/issues/25#issuecomment-174273950
+
+https://github.com/bakwc/JamSpell !
+https://github.com/antoinewdg/pyffs
+https://github.com/wolfgarbe/SymSpell !
+https://github.com/mammothb/symspellpy
+https://github.com/whoosh-community/whoosh
+https://github.com/chinnichaitanya/spellwise
+
+https://pypi.org/project/roaringbitmap
+https://github.com/RoaringBitmap/CRoaring
+https://github.com/andreasvc/roaringbitmap
+https://github.com/Ezibenroc/PyRoaringBitMap
+https://github.com/Ezibenroc/roaring_analysis
+
+SWIG C++ python demo
+https://youtu.be/Dct-sVGXvic?si=ZY0l7oHLr3k9Pdtt
+
+SWIG:Examples:python:class
+https://web.mit.edu/svn/src/swig-1.3.25/Examples/python/class/
+
+SWIG with C++ class example
+https://gist.github.com/mattbierbaum/1193397
+
+SWIG and C++
+https://www.swig.org/Doc1.3/SWIGPlus.html
+
+Python wrapper for a C++ class using SWIG.
+https://github.com/jkrauth/swig_cpp_python
+
+Как создать Python wrapper и не сойти с ума / Хабр
+https://habr.com/ru/articles/467615/
+
+Using C++ in Cython — Cython 3.1.0a0 documentation
+https://cython.readthedocs.io/en/latest/src/userguide/wrapping_CPlusPlus.html
+
+c++ - Extending python - to swig, not to swig or Cython - Stack Overflow
+https://stackoverflow.com/questions/456884/extending-python-to-swig-not-to-swig-or-cython
+
+Swig: interface simple C++ class that returns vector - Stack Overflow
+https://stackoverflow.com/questions/46377280/swig-interface-simple-c-class-that-returns-vector#46382630
+
+Longest common substring from more than two strings
+https://stackoverflow.com/questions/2892931/longest-common-substring-from-more-than-two-strings
+
+Damn Cool Algorithms: Levenshtein Automata
+http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
+
+Arachnid / automata.py
+https://gist.github.com/Arachnid/491973
+
+https://en.wikipedia.org/wiki/Edit_distance
+https://en.wikipedia.org/wiki/Levenshtein_distance
+https://pypi.org/project/editdistance
+https://github.com/roy-ht/editdistance
+https://towardsdatascience.com/faster-levenshtein-distance-calculation-using-mbleven-b5d96bde7feb
+https://arxiv.org/pdf/1907.01600.pdf
+https://people.csail.mit.edu/indyk/edit.ps
+https://cs.stackexchange.com/questions/117732/find-the-closest-string-to-a-fixed-set-of-strings
+https://stackoverflow.com/questions/67548039/nearest-neighbor-search-over-levenshtein-distance-in-python-using-metric-indexin
+https://gist.github.com/Arachnid/491973
+https://pyspellchecker.readthedocs.io/en/latest/
+https://en.wikipedia.org/wiki/Levenshtein_automaton
+https://github.com/julesjacobs/levenshtein/blob/master/levenshtein.py
+https://julesjacobs.com/2015/06/17/disqus-levenshtein-simple-and-fast.html
+https://stackoverflow.com/questions/48015145/best-way-to-do-a-fuzzy-key-lookup-in-python
+https://github.com/brmson/dawg-levenshtein !!!
+https://github.com/mammothb/symspellpy !!!
+https://github.com/aosingh/lexpy !!!
+https://coderlessons.com/articles/veb-razrabotka-articles/algoritm-nedeli-chertovski-klassnye-avtomaty-levenshteina
+https://github.com/wolfgarbe/SymSpell
+https://github.com/mammothb/symspellpy
+https://github.com/maxbachmann/RapidFuzz
+https://maxbachmann.github.io/RapidFuzz/Usage/distance/Levenshtein.html
+https://pypi.org/project/rust-fst/
+https://github.com/universal-automata/liblevenshtein-cpp
+https://code.google.com/archive/p/dawgdic/downloads
+https://github.com/stil/dawgdic
+https://github.com/ti250/DAWG-patched
+https://gist.github.com/Arachnid/491973 !!!
+http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata !!!

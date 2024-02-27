@@ -1,0 +1,47 @@
+[
+    [
+        ["фир",    "NOUN,inan,masc,Abbr @ sing,nomn"],
+        ["фира",   "NOUN,inan,masc,Abbr @ sing,gent"],
+        ["фиру",   "NOUN,inan,masc,Abbr @ sing,datv"],
+        ["фир",    "NOUN,inan,masc,Abbr @ sing,accs"],
+        ["фиром",  "NOUN,inan,masc,Abbr @ sing,ablt"],
+        ["фире",   "NOUN,inan,masc,Abbr @ sing,loct"],
+        ["фиры",   "NOUN,inan,masc,Abbr @ plur,nomn"],
+        ["фиров",  "NOUN,inan,masc,Abbr @ plur,gent"],
+        ["фирами", "NOUN,inan,masc,Abbr @ plur,datv"],
+        ["фиры",   "NOUN,inan,masc,Abbr @ plur,accs"],
+        ["фирами", "NOUN,inan,masc,Abbr @ plur,ablt"],
+        ["фирах",  "NOUN,inan,masc,Abbr @ plur,loct"]
+    ],
+
+    [
+        ["сбол",    "NOUN,inan,masc,Abbr @ sing,nomn"],
+        ["сбола",   "NOUN,inan,masc,Abbr @ sing,gent"],
+        ["сболу",   "NOUN,inan,masc,Abbr @ sing,datv"],
+        ["сбол",    "NOUN,inan,masc,Abbr @ sing,accs"],
+        ["сболом",  "NOUN,inan,masc,Abbr @ sing,ablt"],
+        ["сболе",   "NOUN,inan,masc,Abbr @ sing,loct"],
+        ["сболы",   "NOUN,inan,masc,Abbr @ plur,nomn"],
+        ["сболов",  "NOUN,inan,masc,Abbr @ plur,gent"],
+        ["сболам",  "NOUN,inan,masc,Abbr @ plur,datv"],
+        ["сболы",   "NOUN,inan,masc,Abbr @ plur,accs"],
+        ["сболами", "NOUN,inan,masc,Abbr @ plur,ablt"],
+        ["сболах",  "NOUN,inan,masc,Abbr @ plur,loct"]
+    ],
+
+    [
+        ["винда",   "NOUN,inan,femn,Infr @ sing,nomn"],
+        ["винды",   "NOUN,inan,femn,Infr @ sing,gent"],
+        ["винде",   "NOUN,inan,femn,Infr @ sing,datv"],
+        ["винду",   "NOUN,inan,femn,Infr @ sing,accs"],
+        ["виндой",  "NOUN,inan,femn,Infr @ sing,ablt"],
+        ["виндою",  "NOUN,inan,femn,Infr @ sing,ablt,V-oy"],
+        ["винде",   "NOUN,inan,femn,Infr @ sing,loct"],
+        ["винды",   "NOUN,inan,femn,Infr @ plur,nomn"],
+        ["винд",    "NOUN,inan,femn,Infr @ plur,gent"],
+        ["виндам",  "NOUN,inan,femn,Infr @ plur,datv"],
+        ["винды",   "NOUN,inan,femn,Infr @ plur,accs"],
+        ["виндами", "NOUN,inan,femn,Infr @ plur,ablt"],
+        ["виндах",  "NOUN,inan,femn,Infr @ plur,loct"]
+    ]
+]

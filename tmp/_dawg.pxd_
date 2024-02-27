@@ -1,0 +1,179 @@
+cdef extern from "<iostream>" namespace "std":
+
+    cdef cppclass istream: 
+        istream() except +
+
+    cdef cppclass ostream: 
+        ostream() except +
+
+cdef extern from "<fstream>" namespace "std":
+
+    cdef cppclass ifstream(istream):
+        void open(char* filename, int mode) except +
+        ifstream& read(char* s, int n) except +
+        void close() except +
+
+    cdef cppclass ofstream(ostream):
+        void open(char* filename, int mode) except +
+        ofstream& write(char* s, int n) except +
+        void close() except +
+
+cdef extern from "<iostream>" namespace "std::ios_base":
+    int binary
+
+
+cdef extern from "dawgdic/base-types.h" namespace "dawgdic":
+
+    ctypedef int SizeType
+    ctypedef int ValueType
+    ctypedef char CharType
+    ctypedef unsigned int BaseType
+    ctypedef unsigned char UCharType
+
+
+# cdef extern from "dawgdic/guide-unit.h" namespace "dawgdic":
+    
+    # cdef cppclass GuideUnit:
+        
+        # GuideUnit() nogil
+        # UCharType child() nogil
+        # UCharType sibling() nogil
+        # void set_child(UCharType child) nogil
+        # void set_sibling(UCharType sibling) nogil
+
+
+# cdef extern from "dawgdic/dictionary-unit.h" namespace "dawgdic":
+
+    # cdef cppclass DictionaryUnit:
+        
+        # bint has_leaf() nogil
+        # DictionaryUnit() nogil
+	# BaseType label() nogil
+        # BaseType offset() nogil
+        # ValueType value() nogil
+        # void set_has_leaf() nogil
+        # void set_value(ValueType value) nogil
+        # void set_label(UCharType label) nogil
+        # bint set_offset(BaseType offset) nogil
+
+
+cdef extern from "dawgdic/guide.h" namespace "dawgdic":
+    
+    cdef cppclass Guide:
+
+        void Clear() nogil
+        bint Read(istream *input) nogil except +
+        bint Write(ostream *output) nogil except +
+
+        # Guide() nogil
+        # BaseType root() nogil
+        # SizeType size() nogil
+        # GuideUnit *units() nogil
+        # SizeType file_size() nogil
+        # SizeType total_size() nogil
+        # void Map(void *address) nogil
+        # void Swap(Guide *Guide) nogil
+        # UCharType child(BaseType index) nogil
+        # UCharType sibling(BaseType index) nogil
+
+
+cdef extern from "dawgdic/dictionary.h" namespace "dawgdic":
+
+    cdef cppclass Dictionary:
+
+        void Clear() nogil
+        BaseType root() nogil
+        bint Read(istream *input) nogil except +
+        bint Write(ostream *output) nogil except +
+        bint Follow(CharType *s, BaseType *index) nogil
+        bint Follow(CharType label, BaseType *index) nogil
+        
+        # Dictionary() nogil
+        # void Shrink() nogil
+        # SizeType size() nogil
+        # SizeType file_size() nogil
+        # SizeType total_size() nogil
+        # DictionaryUnit *units() nogil
+        # void Map(void *address) nogil
+        # void Swap(Dictionary *dic) nogil
+        # bint Contains(CharType *key) nogil
+        # ValueType Find(CharType *key) nogil
+        # bint has_value(BaseType index) nogil
+        # ValueType value(BaseType index) nogil
+        # void Map(void *address, SizeType size) nogil
+        # bint Find(CharType *key, ValueType *value) nogil
+        # bint Contains(CharType *key, SizeType length) nogil
+        # ValueType Find(CharType *key, SizeType length) nogil
+        # bint Follow(CharType *s, BaseType *index, SizeType *count) nogil
+        # bint Follow(CharType *s, SizeType length, BaseType *index) nogil
+        # bint Find(CharType *key, SizeType length, ValueType *value) nogil
+        # bint Follow(CharType *s, SizeType length, BaseType *index, SizeType *count) nogil
+
+
+cdef extern from "dawgdic/completer.h" namespace "dawgdic" nogil:
+    
+    cdef cppclass Completer:
+ 
+        char *key() nogil
+        bint Next() nogil
+        void Start(BaseType index) nogil
+        Completer(Dictionary &dic, Guide &guide) nogil
+        
+        # Completer() nogil
+        # Guide &guide() nogil
+        # Dictionary &dic() nogil
+        # SizeType length() nogil
+        # ValueType value() nogil
+        # void set_guide(Guide &guide) nogil
+        # void set_dic(Dictionary &dic) nogil
+        # void Start(BaseType index, char *prefix) nogil
+        # void Start(BaseType index, char *prefix, SizeType length) nogil
+
+
+cdef extern from "dawgdic/dawg.h" namespace "dawgdic":
+
+    cdef cppclass Dawg:
+
+        void Clear() nogil
+
+        # Dawg()
+        # BaseType root() nogil
+        # SizeType size() nogil
+        # void Swap(Dawg *dawg) nogil
+        # SizeType num_of_states() nogil
+        # bint is_leaf(BaseType index) nogil
+        # SizeType num_of_transitions() nogil
+        # BaseType child(BaseType index) nogil
+        # bint is_merging(BaseType index) nogil
+        # UCharType label(BaseType index) nogil
+        # ValueType value(BaseType index) nogil
+        # SizeType num_of_merged_states() nogil
+        # BaseType sibling(BaseType index) nogil
+        # SizeType num_of_merging_states() nogil
+        # SizeType num_of_merged_transitions() nogil
+
+
+cdef extern from "dawgdic/dawg-builder.h" namespace "dawgdic":
+
+    cdef cppclass DawgBuilder:
+    
+        bint Finish(Dawg *dawg)
+        bint Insert(CharType *key, SizeType length, ValueType value)
+
+        # void Clear() nogil
+        # DawgBuilder() nogil
+        # SizeType size() nogil
+        # bint Insert(CharType *key)
+        # SizeType num_of_states() nogil
+        # SizeType num_of_transitions() nogil        
+        # SizeType num_of_merged_states() nogil
+        # SizeType num_of_merging_states() nogil
+        # SizeType num_of_merged_transitions() nogil
+        # bint Insert(CharType *key, ValueType value)
+
+
+cdef extern from "dawgdic/guide-builder.h" namespace "dawgdic::GuideBuilder":
+    cdef bint Build(Dawg &dawg, Dictionary &dic, Guide* guide) nogil
+
+cdef extern from "dawgdic/dictionary-builder.h" namespace "dawgdic::DictionaryBuilder":
+    cdef bint Build(Dawg &dawg, Dictionary *dic) nogil

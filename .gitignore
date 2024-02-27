@@ -1,0 +1,13 @@
+*.so
+*.xml
+*.dawg
+
+env/
+data/
+build/
+
+__pycache__/
+.ipynb_checkpoints/
+
+src/lemma/dawg.cpp
+src/lemma.egg-info/
